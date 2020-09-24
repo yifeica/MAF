@@ -6,20 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moon</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+        background-image: linear-gradient(rgb(33, 15, 85), rgb(17, 28, 131));
+        height: 100vh;
+    }
+
+    #moon {
+        width: 280px;
+        height: 280px;
+        background-color: rgb(255, 238, 196);
+        border-radius: 50%;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        animation: shining 3s infinite alternate-reverse;
+    }
+
+    #fullmoon {
+        background-image: url(moon.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        filter: blur(2px);
+    }
+
+    @keyframes shining {
+        from{
+            box-shadow: 0 0 50px 50px rgba(255, 238, 209, 0.37);
+        }
+        to{
+            box-shadow: 0 0 30px 30px rgba(255, 238, 209, 0.37);
+        }
+    }
+</style>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
 
-        body{
-            background-color: black;
-            background-image: linear-gradient(rgb(255, 123, 255),rgb(116, 116, 255));
-            height: 100vh;
-        }
-    </style>
+    <div id="moon">
+        <div id="fullmoon">
+
+        </div>
+    </div>
+
 </body>
 
 </html>
