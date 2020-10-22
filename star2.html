@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0%;
+        margin: 0%;
+    }
+
+    body {
+        background-image: linear-gradient(rgb(21, 0, 99), rgb(54, 4, 83));
+        height: 100vh;
+    }
+
+    .star {
+        height: 5px;
+        width: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        position: absolute;
+        top: 100px;
+        left: 100px;
+
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<body>
+    <div class="star"></div>
+
+    <div class="star" style="top:150px"></div>
+
+    <div class="star" style="left:150px"></div>
+
+    <div class="star" style="left:150px;top:150px"></div>
+
+    <div class="star" style="left:350px;top:450px"></div>
+
+    <script>
+        //for loop
+        for (i = 0; i < 200; i++) {
+            let star = document.createElement("div")
+            let size = 3 * 3 * Math.random();
+            let x = 100 * Math.random();
+            let y = 100 * Math.random();
+
+            let red = 255 * Math.random();
+            let green = 255 * Math.random();
+            let blue = 200 + 55 * Math.random();
+
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+            star.style.backgroundColor = `rgb(${red},${green},${blue})`;
+            star.style.borderRadius = "50%"
+            star.style.boxShadow = `0 0 ${size}px ${size}px rgba(${red},${green},${blue},0.3)`
+            star.style.position = "absolute"
+            star.style.top = y + "vh"
+            star.style.left = x + "vw"
+            document.body.appendChild(star)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
